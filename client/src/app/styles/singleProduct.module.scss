@@ -1,0 +1,108 @@
+@import './variables.module.scss' ;
+
+.container{
+    @include container($color-background-primary);
+}
+
+.singleProduct_container {
+    @include container-child();
+    background-color: $color-background-secondary;
+    flex-direction: column;
+}
+
+.singleProduct {
+
+    &_data_container {
+        display: grid;
+        grid-template-columns: 0.5fr repeat(10, 1fr) 0.5fr;
+        grid-template-rows: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+
+        @include desktop() {
+            grid-template-columns: repeat(12, 1fr);
+        }
+    }
+
+    &_img {
+        grid-area:  1 / 2 / 2 / 12;
+
+        img {
+            width: 100%;
+        }
+
+        @include desktop() {
+            grid-area: 1 / 1 / 2 / 7;
+        }
+        
+    }
+    &_specs {
+        grid-area:  2 / 2 / 3 / 12;
+
+        @include desktop() {
+            grid-area: 1 / 9 / 2 / 12;
+        }
+        color: $color-text-primary;
+
+        &_quantity {
+            font-size: $font-size-sm;
+            font-weight: 400;
+            padding-top: $space-scondary;
+            margin-bottom: $space-primary;
+        }
+        &_title {
+            font-size: $font-size-xl;
+            font-weight: bold;
+        }
+        &_price {
+            font-size: $font-size-3xl;
+            padding: $space-scondary 0px;
+        }
+        &_cta {
+            width: 100%;
+            font-size: $font-size-md;
+            padding: 5px $space-scondary;
+            border-radius: $border-radius-primary;
+            background-color: $color-button-primary;
+            color: $color-background-primary;
+            border: 0px;
+            padding: 10px 10px;
+            margin-right: $space-scondary;
+            cursor: pointer;
+        }
+    }
+
+
+    &_description_container {
+        padding: $space-scondary;
+        padding-bottom: 0px;
+        display: grid;
+        grid-template-columns: 0.5fr repeat(10, 1fr) 0.5fr;
+        grid-template-rows: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+
+        @include desktop() {
+            grid-template-rows: 1fr;
+            grid-template-columns: repeat(12, 1fr);
+        }
+
+        section {
+            grid-area:  1 / 2 / 2 / 12;
+
+            @include desktop() {
+                grid-area: 1 / 1 / 2 / 9;
+            }
+
+            h2 {
+                font-size: $font-size-2xl;
+                font-weight: 300;
+            }
+            p {
+                padding: $space-scondary 0px;
+                font-size: $font-size-md;
+                color: $color-text-tertiary;
+            }
+        }
+    }
+}

@@ -1,0 +1,67 @@
+@import './variables.module.scss' ;
+
+.container{
+    @include container($color-background-primary);
+}
+
+.listing_container {
+    @include container-child();
+    background-color: $color-background-secondary;
+}
+
+.cards_container {
+    width: 100%;
+}
+
+.card{
+    display: flex;
+    margin: 0px $space-primary;
+    padding: $space-primary 0px;
+    border-bottom: 2px solid $color-background-primary;
+    color: $color-text-primary;
+
+    img {
+        margin-right: $space-primary;
+        border-radius: $border-radius-primary;;
+    }
+
+    &_data_container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @include tablet {
+            flex-direction: row;
+          }
+    }
+
+    &_info{
+        margin: $space-primary 0px;
+
+        &_price{
+            display: flex;
+            align-items: center;
+            font-size: $font-size-xl;
+            margin-bottom: $space-scondary;
+        }
+        &_title, &_condition{
+            font-size: $font-size-lg;
+        }
+
+        &_free_shipping{
+            display: flex;
+            margin-left: 10px;
+        }
+    }
+
+    &_city_info {
+        font-size: $font-size-xs;
+        color: $color-text-secondary;
+
+        @include tablet {
+            margin-right: 75px;
+            margin-top: $space-scondary;
+          }
+    }
+}

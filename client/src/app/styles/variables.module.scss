@@ -1,0 +1,61 @@
+// colors
+$primary-brand-color: #FFE600;
+$color-text-primary: #333333;
+$color-text-secondary: #666666;
+$color-text-tertiary: #999999;
+$color-background-primary: #EEEEEE;
+$color-background-secondary: #FFFFFF;
+$color-button-primary: #3483FA;
+
+// font sizes
+$font-size-xs: 12px;
+$font-size-sm: 14px;
+$font-size-md: 16px;
+$font-size-lg: 18px;
+$font-size-xl: 24px;
+$font-size-2xl: 28px;
+$font-size-3xl: 46px;
+
+// space
+$space-primary: 16px;
+$space-scondary: 32px;
+
+// borders 
+$border-radius-primary: 4px;
+ 
+@mixin tablet {
+  @media only screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin container($background){
+  width: 100%;
+  background-color: $background;
+  padding: 0px $space-primary;
+  padding-bottom: $space-scondary;
+
+  font-family: Helvetica, sans-serif;
+}
+
+@mixin container-child(){
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include tablet {
+    max-width: 768px;
+  }
+
+  @include desktop() {
+    max-width: 1200px;
+  }
+}

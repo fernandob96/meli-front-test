@@ -1,0 +1,30 @@
+@import './variables.module.scss' ;
+
+.container {
+    width: 100%;
+    ul{
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+        font-size: $font-size-sm;
+        font-weight: 500;
+        margin: $space-primary 0;
+        color: $color-text-secondary;
+    }
+    li{
+        margin-right: 2rem;
+    }
+    li::after {
+        content: ">";
+        position:absolute;
+        width: 5px;
+        height: 5px;
+        margin-left: 0.8rem;
+        font-weight: bold;
+      }
+      li:last-child:after { content: "" }
+}
+
+.breadcrumb_container {
+    @include container-child();
+}

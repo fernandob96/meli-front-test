@@ -1,0 +1,46 @@
+@import './variables.module.scss' ;
+
+.container{
+    @include container($primary-brand-color);
+    padding: 8px $space-primary;
+}
+
+.header_container{
+    @include container-child();
+}
+
+.logo_container {
+    display: flex;
+    margin-right: 25px;
+}
+
+.form {
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    
+    input {
+        width: 100%;
+        height: 2.5rem;
+        font-size: $font-size-lg;
+        padding: 5px 20px;
+        border-top-left-radius  : $border-radius-primary;
+        border-bottom-left-radius: $border-radius-primary;
+        border: 0px;
+        color: $color-text-primary;
+    }
+
+    button {
+        width: 2.5rem;
+        height: 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        border-top-right-radius: $border-radius-primary;
+        border-bottom-right-radius: $border-radius-primary;
+        cursor: pointer;
+        border: 0px;
+        background-color: $color-background-primary;
+    }
+}
